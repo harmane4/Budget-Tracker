@@ -14,7 +14,7 @@ const CACHE_NAME = "static-cache";
 // Caches API responses
 const DATA_CACHE_NAME = "data-cache";
 
-// install
+// Listener for install event & cache files
 self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -26,7 +26,7 @@ self.addEventListener("install", function (evt) {
   self.skipWaiting();
 });
 
-// The activate handler takes care of cleaning up old caches.
+// The activate handler takes care of deleting old caches.
 self.addEventListener("activate", function (evt) {
   evt.waitUntil(
     caches.keys().then((keyList) => {
@@ -53,12 +53,14 @@ self.addEventListener("fetch", function (evt) {
       caches.open(DATA_CACHE_NAME).then((cache) => {
         return fetch(evt.request)
           .then((response) => {
+            // If response successful, clone & store in cache
             if (response.status === 200) {
               cache.put(evt.request.url, response.clone());
             }
             return response;
           })
           .catch((err) => {
+            // Network request failed, try & retireve from cache
             return cache.match(evt.request);
           });
       })
