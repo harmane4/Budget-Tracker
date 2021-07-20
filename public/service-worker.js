@@ -6,7 +6,7 @@ const FILES_TO_CACHE = [
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
   "/manifest.webmanifest",
-  "/indexedDB.js",
+  "/db.js",
 ];
 
 // Caches static assets
