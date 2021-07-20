@@ -4,7 +4,7 @@
 
 ## Description
 
-This application allows users to add expenses and deposits to their budget.
+This application allows users to add expenses and deposits to their budget with or without a connection. When expenses are entered offline they are populated when a connection is brought back online.
 
 - MongoDB
 - Mongoose
@@ -42,6 +42,7 @@ When the user is first directed to the Workout Tracker they will see this image.
 [Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+[onLine](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)
 
 ## Questions
 

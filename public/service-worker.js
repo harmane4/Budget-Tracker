@@ -60,7 +60,7 @@ self.addEventListener("fetch", function (evt) {
             return response;
           })
           .catch((err) => {
-            // Network request failed, try & retireve from cache
+            // Network request failed, try & retrieve from cache
             return cache.match(evt.request);
           });
       })

@@ -42,7 +42,7 @@ function checkDatabase() {
 // Handles success
 request.onsuccess = function (event) {
   db = event.target.result;
-  // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine
+
   if (navigator.onLine) {
     checkDatabase();
   } else {
@@ -56,7 +56,6 @@ function saveRecord(record) {
   const transaction = db.transaction(["BudgetStore"], "readwrite");
   const store = transaction.objectStore("BudgetStore");
   // Put this updated object back into the database.
-  // https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put
   store.add(record);
 }
 
