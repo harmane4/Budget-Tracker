@@ -4,7 +4,7 @@
 
 ## Description
 
-This application allows users to add expenses and deposits to their budget.
+This application allows users to add expenses and deposits to their budget with or without a connection. When expenses are entered offline they are populated when a connection is brought back online.
 
 - MongoDB
 - Mongoose
